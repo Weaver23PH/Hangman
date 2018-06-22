@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'eraserregular';
+    src: url('../fonts/EraserRegular-webfont.woff') format('woff'),
+    url('../fonts/EraserRegular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'p22_toybox_blockslineregular';
+    src: url('../fonts/p22_toybox_blocksline_regular-webfont.woff2') format('woff2'),
+    url('../fonts/p22_toybox_blocksline_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: block;
+    border-collapse: collapse;
+}
+
+.blackboard {
+    font-size: 1.5em;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 5px solid brown;
+    font-family: eraserregular, sans-serif;
+    display: inline-block;
+}
+
+.overboard {
+    background: linear-gradient(darkslategray, gray);
+    border: 3px solid darkslategray;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: p22_toybox_blockslineregular, sans-serif;
+    font-size: 2em;
+    width: 35%;
+    margin: 0 auto;
+}
+
+#leftBoard {
+    float: left;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+}
+
+#rightBoard {
+    float: right;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 35%;
+    padding: 5px;
+}
+
+#hanged {
+    height: 65%;
+	margin-left: 30%;
+}
+
+
+#copy {
+    font-family: p22_toybox_blockslineregular, sans-serif;
+    width: auto;
+    height: auto;
+    font-size: 1.5em;
+    text-align: center;
+    background: linear-gradient(darkslategray, gray);
+    border: 3px solid darkslategray;
+    margin: 0 auto;
+    float: right;
+}
