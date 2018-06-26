@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var wordArray = [];
         var attempts = 10;
         var ctx = canvas.getContext("2d");
+        ctx.lineWidth = 15;
+        ctx.strokeStyle = "white";
         var version = languageVersion.ENG;
         var dictionary = version.dictionary;
         guessedWord.innerText = version.enter;
@@ -140,97 +142,60 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function drawHangedman() {
-            ctx.lineWidth = 15;
-            ctx.strokeStyle = "white";
-            if (attempts > 0) {
-                ctx.beginPath();
-                switch (attempts) {
-                    case 9:
-                        ctx.moveTo(100, 0);
-                        ctx.lineTo(250, 0);
-                        ctx.stroke();
-                        break;
-                    case 8:
-                        ctx.moveTo(250, 0);
-                        ctx.lineTo(250, 300);
-                        ctx.stroke();
-                        break;
-                    case 7:
-                        ctx.moveTo(200, 0);
-                        ctx.lineTo(250, 25);
-                        ctx.stroke();
-                        break;
-                    case 6:
-                        ctx.moveTo(150, 0);
-                        ctx.lineTo(150, 25);
-                        ctx.stroke();
-                        break;
-                    case 5:
-                        ctx.arc(150, 65, 40, 0, 2 * Math.PI);
-                        ctx.stroke();
-                        break;
-                    case 4:
-                        ctx.moveTo(150, 105);
-                        ctx.lineTo(150, 200);
-                        ctx.stroke();
-                        break;
-                    case 3:
-                        ctx.moveTo(150, 110);
-                        ctx.lineTo(100, 120);
-                        ctx.stroke();
-                        break;
-                    case 2:
-                        ctx.moveTo(150, 110);
-                        ctx.lineTo(200, 120);
-                        ctx.stroke();
-                        break;
-                    case 1:
-                        ctx.moveTo(150, 200);
-                        ctx.lineTo(100, 250);
-                        ctx.stroke();
-                        break;
-                    case 0:
-                        ctx.moveTo(150, 200);
-                        ctx.lineTo(200, 250);
-                        ctx.stroke();
-                        break;
-                }
-                ctx.closePath();
+            ctx.beginPath();
+            switch (attempts) {
+                case 9:
+                    ctx.moveTo(100, 0);
+                    ctx.lineTo(250, 0);
+                    ctx.stroke();
+                    break;
+                case 8:
+                    ctx.moveTo(250, 0);
+                    ctx.lineTo(250, 300);
+                    ctx.stroke();
+                    break;
+                case 7:
+                    ctx.moveTo(200, 0);
+                    ctx.lineTo(250, 25);
+                    ctx.stroke();
+                    break;
+                case 6:
+                    ctx.moveTo(150, 0);
+                    ctx.lineTo(150, 25);
+                    ctx.stroke();
+                    break;
+                case 5:
+                    ctx.arc(150, 65, 40, 0, 2 * Math.PI);
+                    ctx.stroke();
+                    break;
+                case 4:
+                    ctx.moveTo(150, 105);
+                    ctx.lineTo(150, 200);
+                    ctx.stroke();
+                    break;
+                case 3:
+                    ctx.moveTo(150, 110);
+                    ctx.lineTo(100, 120);
+                    ctx.stroke();
+                    break;
+                case 2:
+                    ctx.moveTo(150, 110);
+                    ctx.lineTo(200, 120);
+                    ctx.stroke();
+                    break;
+                case 1:
+                    ctx.moveTo(150, 200);
+                    ctx.lineTo(100, 250);
+                    ctx.stroke();
+                    break;
+                case 0:
+                    ctx.moveTo(150, 200);
+                    ctx.lineTo(200, 250);
+                    ctx.stroke();
+                    break;
             }
-            else if (attempts <= 0) {
-                ctx.beginPath();
-                ctx.moveTo(100, 0);
-                ctx.lineTo(250, 0);
-                ctx.stroke();
-                ctx.moveTo(250, 0);
-                ctx.lineTo(250, 300);
-                ctx.stroke();
-                ctx.moveTo(150, 0);
-                ctx.lineTo(150, 25);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.arc(150, 65, 40, 0, 2 * Math.PI);
-                ctx.stroke();
-                ctx.moveTo(150, 105);
-                ctx.lineTo(150, 200);
-                ctx.stroke();
-                ctx.moveTo(150, 110);
-                ctx.lineTo(100, 120);
-                ctx.stroke();
-                ctx.moveTo(150, 110);
-                ctx.lineTo(200, 120);
-                ctx.stroke();
-                ctx.moveTo(150, 200);
-                ctx.lineTo(100, 250);
-                ctx.stroke();
-                ctx.moveTo(150, 200);
-                ctx.lineTo(200, 250);
-                ctx.stroke();
-                attempts = 0;
-                ctx.closePath();
-            }
+            ctx.closePath();
         }
-
 
         runner();
     }
