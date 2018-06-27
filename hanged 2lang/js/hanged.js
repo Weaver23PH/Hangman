@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const wordGuessed = document.querySelector("#word h3");
         const usedBox = document.querySelector("#usedLettersBox h1");
 
-        var languageVersion = {
+        var language = {
             ENG: {
                 overboard: "HANGMAN the game",
                 hanged: "Hangman",
@@ -39,13 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
         var ctx = canvas.getContext("2d");
         ctx.lineWidth = 15;
         ctx.strokeStyle = "white";
-        var version = languageVersion.ENG;
+        var version = language.ENG;
         var dictionary = version.dictionary;
-        guessedWord.innerText = version.enter;
-        overboard.innerText = version.overboard;
-        hangedHead.innerText = version.hanged;
-        wordGuessed.innerText = version.word;
-        usedBox.innerText = version.used;
+        function languageVersion() {
+            dictionary = version.dictionary;
+            guessedWord.innerText = version.enter;
+            overboard.innerText = version.overboard;
+            hangedHead.innerText = version.hanged;
+            wordGuessed.innerText = version.word;
+            usedBox.innerText = version.used;
+        }
 
         changeLang();
 
@@ -55,23 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 languageSwitch.children[i].addEventListener("click", changeLang);
             }
             if (this === languageSwitch.children[0]) {
-                version = languageVersion.PL;
-                dictionary = version.dictionary;
-                guessedWord.innerText = version.enter;
-                overboard.innerText = version.overboard;
-                hangedHead.innerText = version.hanged;
-                wordGuessed.innerText = version.word;
-                usedBox.innerText = version.used;
+                version = language.PL;
+                languageVersion();
                 return version;
             } else if ((this === languageSwitch.children[1])) {
-                version = languageVersion.ENG;
-                dictionary = version.dictionary;
-                guessedWord.innerText = version.enter;
-                overboard.innerText = version.overboard;
-                hangedHead.innerText = version.hanged;
-                wordGuessed.innerText = version.word;
-                usedBox.innerText = version.used;
-                return version;
+                version = language.ENG;
+                languageVersion();
             }
             return dictionary;
         }
@@ -101,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function guessLetter(event) {
             var keyChoice = event.key;
-            console.log(attempts);
             if (keyChoice === "Enter") {
                 setupBoard();
             } else {
