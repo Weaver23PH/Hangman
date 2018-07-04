@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.strokeStyle = "white";
         var version = language.ENG;
         var dictionary = version.dictionary;
+
         function languageVersion() {
             dictionary = version.dictionary;
             guessedWord.innerText = version.enter;
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         changeLang();
+        languageVersion()
 
 
         function changeLang() {
